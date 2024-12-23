@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Accounts</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/logout">Log-Out</a></li>
+    </ul>
+</nav>
+
+<h1>Bank Accounts</h1>
+
+<a href="/accounts/new">Add New Bank Account</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Account Number</th>
+        <th>Balance</th>
+        <th>User</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="account : ${accounts}">
+        <tr>
+            <td th:text="${account.id}"></td>
+            <td th:text="${account.accountNumber}"></td>
+            <td th:text="${account.balance}"></td>
+            <td th:text="${account.user.name}"></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>

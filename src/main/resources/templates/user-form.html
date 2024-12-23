@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/logout">Log-Out</a></li>
+    </ul>
+</nav>
+<h1>Add New User</h1>
+<form action="/users" method="post">
+    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Save</button>
+</form>
+
+<a href="/users">Back to Users List</a>
+</body>
+</html>

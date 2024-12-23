@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #1e1e30, #2a2a40); /* Dark futuristic gradient */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #252545, #383865);
+            border: 2px solid #3b3b6b;
+            border-radius: 16px;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5), 0px 0px 10px #6a5acd;
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 120px;
+            height: 120px;
+            background: rgba(106, 90, 205, 0.5);
+            filter: blur(50px);
+            z-index: -1;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -10%;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 105, 180, 0.4);
+            filter: blur(50px);
+            z-index: -1;
+        }
+
+        .container h1 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .container label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aaa;
+            text-align: left;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"] {
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #2a2a4f;
+            color: #ffffff;
+            box-shadow: inset 0px 2px 8px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container input[type="text"]:focus,
+        .container input[type="password"]:focus {
+            outline: none;
+            background: #3b3b6b;
+            box-shadow: 0 0 10px #6a5acd;
+        }
+
+        .container input[type="submit"] {
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #ff6ec4, #7873f5);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4), 0px 0px 10px rgba(255, 105, 180, 0.8);
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
+        }
+
+        .container input[type="submit"]:hover {
+            transform: scale(1.05);
+        }
+
+        .alert {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: rgba(255, 50, 50, 0.2);
+            border: 1px solid rgba(255, 50, 50, 0.4);
+            border-radius: 8px;
+            color: #ff4c4c;
+        }
+
+        .container p {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            color: #bbb;
+        }
+
+        .container a {
+            color: #ff6ec4;
+            text-decoration: none;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Login</h1>
+    <div th:if="${param.error}" class="alert">
+        Invalid login credentials. Please try again.
+    </div>
+    <form th:action="@{/login}" method="post">
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+        <label for="email">Email</label>
+        <input type="text" id="email" name="username" placeholder="Enter your email" autofocus />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" />
+
+        <input type="submit" value="Log in" />
+    </form>
+    <p>Don't have an account? <a href="/register">Register</a></p>
+</div>
+</body>
+</html>

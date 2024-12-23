@@ -1,0 +1,188 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #141e30, #243b55); /* Cool dark gradient */
+    color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Headings */
+h1, h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00d9ff; /* Neon blue */
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #00d9ff; /* Neon blue */
+    font-weight: 500;
+}
+
+a:hover {
+    color: #ff6b6b; /* Neon red hover */
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3); /* Transparent black */
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 1.1rem;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    border: 2px solid #00d9ff;
+    border-radius: 4px;
+}
+
+/* Containers */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+    color: #00d9ff; /* Neon blue */
+}
+
+form input, form select, form button {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+form input, form select {
+    background: rgba(255, 255, 255, 0.1); /* Transparent input */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: #00d9ff; /* Neon blue on focus */
+}
+
+form button {
+    background: linear-gradient(135deg, #00d9ff, #1e90ff);
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #ff6b6b, #ff4757); /* Neon red hover */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+table thead {
+    background: rgba(0, 0, 0, 0.3); /* Darker header */
+}
+
+table th, table td {
+    padding: 15px 20px;
+    text-align: left;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+table th {
+    font-weight: bold;
+    color: #00d9ff; /* Neon blue header text */
+}
+
+table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.2); /* Highlight row */
+}
+
+/* Alerts */
+.alert {
+    background-color: #ff6b6b; /* Neon red */
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+}
